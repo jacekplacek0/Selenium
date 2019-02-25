@@ -41,6 +41,20 @@ public abstract class BasePage {
         }
     }
 
+    public void waitForElementStringToChange(WebElement element , int timeout) throws TimeoutException, InterruptedException{
+
+        String loadingString = element.getText();
+        do{
+            timeout--;
+            Thread.sleep(1);
+        }while (timeout > 0 && element.getText().contains(loadingString) );
+
+        if(timeout==0){
+            throw new TimeoutException("timeout waiting for element " + element.toString());
+        }
+
+    }
+
     public WebDriver getDriver(){
         return this.webDriver;
     }
