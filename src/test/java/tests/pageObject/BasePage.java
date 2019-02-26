@@ -1,14 +1,9 @@
 package tests.pageObject;
 
 
+import org.openqa.selenium.*;
 import tests.data.Data;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.InvalidArgumentException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +32,7 @@ public abstract class BasePage {
         if(childUrl != "" ){
             webDriver.get(Data.mainUrl + childUrl);
         }else{
-            throw new IllegalArgumentException("nie ma childUrl");
+            throw new IllegalArgumentException("can't find childUrl");
         }
     }
 
@@ -54,7 +49,34 @@ public abstract class BasePage {
         }
 
     }
+    public void waitForModal(){
+        new WebDriverWait(webDriver, 10)
+                .until((ExpectedCondition<Boolean>) driver ->
+                        driver.findElements(By.className("modal-backdrop")).size() == 0);
+    }
 
+    public boolean isModalBackdropActive(){
+        return webDriver.findElements(By.className("modal-backdrop")).size() > 0;
+    }
+
+    public void waitForAlert(){
+        new WebDriverWait(webDriver, 10)
+                .until(ExpectedConditions.alertIsPresent());
+    }
+    public boolean isAlertActive(){
+        try{
+            webDriver.switchTo().alert();
+            return true;
+        }catch(NoAlertPresentException ex){
+            return false;
+        }
+    }
+    public void waitForAllConnectionToClose() {
+        new WebDriverWait(webDriver, 10).until((ExpectedCondition<Boolean>) driver ->
+                ((JavascriptExecutor) driver).executeScript(
+                        "return jQuery.active == 0")
+                        .equals(true));
+    }
     public WebDriver getDriver(){
         return this.webDriver;
     }

@@ -9,6 +9,8 @@ import tests.testCases.testRadioButtonsDemo.TestRadioButtonsDemo;
 import tests.testCases.testAjaxFormSubmit.TestAjaxFormSubmit;
 import tests.testCases.testTablePagination.TestTablePagination;
 import tests.testCases.testBootstrapAlerts.TestBootstrapAlerts;
+import tests.testCases.testDynamicDataLoading.TestDynamicDataLoading;
+import tests.testCases.testBootstrapProgressbar.TestBootstrapProgressbar;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -18,6 +20,8 @@ import tests.testCases.testBootstrapAlerts.TestBootstrapAlerts;
     TestAjaxFormSubmit.class,
     TestTablePagination.class,
     TestBootstrapAlerts.class,
+    TestDynamicDataLoading.class,
+    TestBootstrapProgressbar.class
 })
 public class SampleSuitTests {
 }
