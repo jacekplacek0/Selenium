@@ -18,6 +18,7 @@ public abstract class BaseTestCase {
 
     @After
     public void cleanUp() throws InterruptedException{
+
         webDriver.close();
         webDriver.quit();
     }

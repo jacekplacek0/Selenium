@@ -3,6 +3,7 @@ package tests.testSuits;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import tests.testCases.testBootstrapDatePicker.TestBootstrapDatePicker;
 import tests.testCases.testSimpleFormDemo.TestSimpleFormDemo;
 import tests.testCases.testCheckBoxDemo.TestCheckBoxDemo;
 import tests.testCases.testRadioButtonsDemo.TestRadioButtonsDemo;
@@ -11,6 +12,7 @@ import tests.testCases.testTablePagination.TestTablePagination;
 import tests.testCases.testBootstrapAlerts.TestBootstrapAlerts;
 import tests.testCases.testDynamicDataLoading.TestDynamicDataLoading;
 import tests.testCases.testBootstrapProgressbar.TestBootstrapProgressbar;
+import tests.testCases.testJQueryUIProgressbar.TestJQueryUIProgressbar;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -21,7 +23,9 @@ import tests.testCases.testBootstrapProgressbar.TestBootstrapProgressbar;
     TestTablePagination.class,
     TestBootstrapAlerts.class,
     TestDynamicDataLoading.class,
-    TestBootstrapProgressbar.class
+    TestBootstrapProgressbar.class,
+    TestJQueryUIProgressbar.class,
+    TestBootstrapDatePicker.class
 })
 public class SampleSuitTests {
 }

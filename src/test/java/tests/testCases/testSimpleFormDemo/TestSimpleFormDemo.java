@@ -9,7 +9,7 @@ import tests.testCases.BaseTestCase;
 
 public class TestSimpleFormDemo extends BaseTestCase {
     @Test
-    public void testBasicFirstFromDemo(){
+    public void TestSimpleFormDemo(){
 
         SimpleFormDemo simpleFormDemo = new SimpleFormDemo(webDriver);
         PageFactory.initElements(webDriver,simpleFormDemo);

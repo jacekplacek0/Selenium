@@ -19,8 +19,8 @@ public class DynamicDataLoading extends BasePage{
 	@FindBy(xpath = "//div[@id='loading']//img")
 	private WebElement replyDataImageUrl;
 
-	public DynamicDataLoading(WebDriver driver) {
-		super(driver);
+	public DynamicDataLoading(WebDriver webDriver) {
+		super(webDriver);
 		childUrl = "dynamic-data-loading-demo.html";
 	}
 	

@@ -10,6 +10,7 @@ public class BootstrapProgressbar extends BasePage{
 
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	private WebElement simpleDialogButton;
+
 	@FindBy(xpath = "//pre[contains(text(),'show();')]")
 	private WebElement simpleDialogScrypt;
 
